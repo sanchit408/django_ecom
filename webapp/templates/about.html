@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>About</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body class="animsition">
+	
+<!-- Header -->
+	<header class="header-v2">
+		<!-- Header desktop -->
+		<div class="container-menu-desktop trans-03">
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop p-l-45">
+
+					<!-- Logo desktop -->
+					<a href="/" class="logo">
+						<img width="150" src="/static/images/icons/logo-01.jpeg" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li>
+								<a href="/">Home</a>
+							</li>
+
+							<li>
+								<a href="{% url 'products' %}">Products</a>
+							</li>
+							<li>
+								<a href="{% url 'blog' %}">Blog</a>
+							</li>
+
+							<li  class="active-menu">
+								<a href="{% url 'aboutus' %}">About Us</a>
+							</li>
+
+							<li>
+								<a href="{% url 'contactus' %}">Contact Us</a>
+							</li>							
+						</ul>
+					</div>
+
+					<!-- Icon header -->
+					<div class="wrap-icon-header flex-w flex-r-m h-full">
+						<div class="flex-c-m h-full p-r-24">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
+								<i class="zmdi zmdi-search"></i>
+							</div>
+						</div>
+						<div class="menu-desktop">
+						<ul class="main-menu">
+							<li>
+								<a href="{% url 'login' %}">Login <img src="/static/images/thamesloginicon.png" width="15px" height="15px"></a>
+							</li>
+						</ul>
+						</div>
+						<div class="menu-desktop">
+						<ul class="main-menu">
+							<li style="margin-right: 50px;">
+								<a href="{% url 'signup' %}">Signup <img src="/static/images/thamessignupicon.png" width="18px" height="18px"></a>
+							</li>
+						</ul>
+						</div>
+
+
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="/static/index.html"><img src="/static/images/icons/logo-01.jpeg" alt="IMG-LOGO"></a>
+			</div>
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+					<i class="zmdi zmdi-search"></i>
+				</div>
+			</div>
+
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+
+
+						<ul class="main-menu-m">
+							<li>
+								<a href="/">Home</a>
+							</li>
+
+							<li>
+								<a href="{% url 'products' %}">Products</a>
+							</li>
+							<li>
+								<a href="{% url 'blog' %}">Blog</a>
+							</li>
+
+							<li  class="active-menu">
+								<a href="{% url 'aboutus' %}">About Us</a>
+							</li>
+
+							<li>
+								<a href="{% url 'contactus' %}">Contact Us</a>
+							</li>	
+							<li>
+								<a href="{% url 'login' %}">Login <img src="/static/images/thamesloginicon.png" width="15px" height="15px"></a>
+							</li>
+							<li style="margin-right: 50px;">
+								<a href="{% url 'signup' %}">Signup <img src="/static/images/thamessignupicon.png" width="18px" height="18px"></a>
+							</li>						
+						</ul>
+		</div>
+
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="/static/images/icons/icon-close2.png" alt="CLOSE">
+				</button>
+
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</header>
+
+
+
+	<!-- Title page -->
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/static/images/bg-001.jpg');">
+		<h2 class="ltext-105 cl0 txt-center">
+			About
+		</h2>
+	</section>	
+
+
+	<!-- Content page -->
+	<section class="bg0 p-t-75 p-b-120">
+		<div class="container">
+			<div class="row p-b-148">
+				<div class="col-md-7 col-lg-8">
+					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+						<h3 class="mtext-111 cl2 p-b-16" style="font-size: 2.5em;">
+							Our Story
+						</h3>
+
+						<p class="stext-113 cl6 p-b-26" style="font-weight: bold; font-size: 1.3em;">
+							Registered Firm Name is KC BADAYA & SONS. We are leading manufacturer of C.P(Crome Plated) Bathroom Fittings in Delhi. We Manufacture High Quality C.P(Crome Plated) bathroom fitting which is made of brass only Because Brass Don't Rust or React with Water which gives Bathroom Fittings true long life. 
+						</p>
+
+						<p class="stext-113 cl6 p-b-26" style="font-weight: bold; font-size: 1.3em;">
+							We market our products under brand name Thames all across Country.
+						</p>
+
+						<p class="stext-113 cl6 p-b-26" style="font-weight: bold; font-size: 1.3em;">
+							Any questions? Let us know! call us on (+91)9953068351
+						</p>
+					</div>
+				</div>
+
+				<div class="col-11 col-md-5 col-lg-4 m-lr-auto">
+					<div class="how-bor1 ">
+						<div class="hov-img0">
+							<img src="/static/images/about-001.jpg" alt="IMG">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="order-md-2 col-md-7 col-lg-8 p-b-30">
+					<div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
+						<h3 class="mtext-111 cl2 p-b-16" style="font-size: 2.5em;">
+							Our Mission
+						</h3>
+
+
+						<p class="stext-113 cl6 p-b-26" style="font-weight: bold; font-size: 1.3em;" >
+							At THAMES Standard, we believe that creativity is the catalyst to continues evolution in your bathroom. As India's leading luxurious bathroom brand, THAMES Standard, goal is to create a living space that is truly like you. We create bathrooms that integrate functional solutions with inspirational style allowing you to express your own personal flair. THAMES Standard, is dedicated to enhancing the total environment of your bathroom by combining innovation and beauty for a unique experience. Our faucet's superior technology is focused on the welfare of your family and the environment, with features. From an stand-alone design to a model that co-ordinates with taps and mixers, there's stylish shower system that will meet- and probably exceed- your needs and expectations.
+						</p>
+
+
+					</div>
+				</div>
+
+				<div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
+					<div class="how-bor2">
+						<div class="hov-img0">
+							<img src="/static/images/about-002.jpg" alt="IMG">
+						</div>
+					</div>
+				</div>
+			
+			</div>
+
+		</div>
+	</section>	
+
+	
+		
+
+	<!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Mapsite
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="/" class="stext-107 cl7 hov-cl1 trans-04">
+								Home
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="{% url 'products' %}" class="stext-107 cl7 hov-cl1 trans-04">
+								Products
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="{% url 'aboutus' %}" class="stext-107 cl7 hov-cl1 trans-04">
+								About Us
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="{% url 'blog' %}" class="stext-107 cl7 hov-cl1 trans-04">
+								Blog
+							</a>
+						</li>					
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Get in Touch
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="{% url 'contactus' %}" class="stext-107 cl7 hov-cl1 trans-04">
+								<i class="fa d-inline mr-3 text-secondary fa-phone"></i>+91-9953068351
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="{% url 'contactus' %}" class="stext-107 cl7 hov-cl1 trans-04">
+								 <i class="fa d-inline mr-3 text-secondary fa-envelope-o"></i>daneshkhandelwal@live.com
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="{% url 'contactus' %}" class="stext-107 cl7 hov-cl1 trans-04">
+								  <i class="fa d-inline mr-3 fa-map-marker text-secondary"></i>New Delhi
+							</a>
+						</li>
+
+
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Thames
+					</h4>
+
+					<p class="stext-107 cl7 size-201">
+						We Manufacture High Quality C.p.(Chrome Plated) bathroom fitting which is made of brass only Bcoz Brass dont rust or react with water which gives Bathroom fittings true long life. 
+					</p>
+
+
+				</div>
+
+			
+			</div>
+
+			<div class="p-t-40">
+				<p class="stext-107 cl6 txt-center">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Thames - All rights reserved.<!-- | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+				</p>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+<!--===============================================================================================-->	
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="/static/js/main.js"></script>
+	
+</body>
+</html>

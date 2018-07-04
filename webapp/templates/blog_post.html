@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Thames </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/modern-business.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/blog_login/home/">Welcome {{request.user.username}}!</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login_app:logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacts/">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Portfolio
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="/portfolio-1-col/">1 Column Portfolio</a>
+                <a class="dropdown-item" href="/portfolio-2-col/">2 Column Portfolio</a>
+                <a class="dropdown-item" href="/portfolio-3-col/">3 Column Portfolio</a>
+                <a class="dropdown-item" href="/portfolio-4-col/">4 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+              </div>
+            </li>
+
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'login_app:login1' %}" ><!--id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                Blog
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                <a class="dropdown-item active" href="/blog_post.html">Blog Post</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Post Title
+        <small>by
+          <a href="#">Start Bootstrap</a>
+        </small>
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Blog Home 2</li>
+      </ol>
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+          <!-- Preview Image -->
+          <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+
+          <hr>
+
+          <!-- Date/Time -->
+          <p>Posted on January 1, 2017 at 12:00 PM</p>
+
+          <hr>
+
+          <!-- Post Content -->
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
+
+          <blockquote class="blockquote">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">Someone famous in
+              <cite title="Source Title">Source Title</cite>
+            </footer>
+          </blockquote>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+
+          <hr>
+
+          <!-- Comments Form -->
+          <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
+              <form action='' method='post'>{% csrf_token %}
+                <div class="form-group">
+                  <textarea class="form-control" name='text' rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Single Comment -->
+          {% for i in data %}
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">{{i.created_by.username}}</h5>
+              {{i.text}}
+              <table>
+                {% if nested %}
+                {% for k in nested %}
+                {% if i.id == k.comment.id %}
+                <tr>
+                  <td>
+                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                  </td>
+                  <td>
+                    {{k.text}}
+                  </td>
+                </tr>
+                {% endif %}
+                {% endfor %}  
+                {% endif %}
+                <tr>
+                  <td>
+                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                  </td>
+                  <td>
+              <form action='{% url 'login_app:nested' %}' method='post'>{% csrf_token %}
+                <div class="form-group">
+                  <input type="hidden" name="comment" value="{{i.id}}">
+                  <input type="text" name='text' placeholder="Write a comment" style="{margin-left: 10px; margin-top:20px;  }" width="800px"></input>
+                </div>
+
+              </form>                  
+                  </td>
+                </tr> 
+
+              </table>
+
+            </div>
+          </div>
+          {% endfor %}
+          <!-- Comment with nested comments 
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Commenter Name</h5>
+              nested comment
+
+              <div class="media mt-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                  <h5 class="mt-0">Commenter Name</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+
+              <div class="media mt-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                  <h5 class="mt-0">Commenter Name</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+-->
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Search Widget -->
+          <div class="card mb-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Categories</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Web Design</a>
+                    </li>
+                    <li>
+                      <a href="#">HTML</a>
+                    </li>
+                    <li>
+                      <a href="#">Freebies</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">JavaScript</a>
+                    </li>
+                    <li>
+                      <a href="#">CSS</a>
+                    </li>
+                    <li>
+                      <a href="#">Tutorials</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Side Widget</h5>
+            <div class="card-body">
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+          </div>
+
+        </div>
+      -->
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+  <footer class="bg3 p-t-75 p-b-32">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-lg-4 p-b-50">
+          <h4 class="stext-301 cl0 p-b-30">
+            Mapsite
+          </h4>
+
+          <ul>
+            <li class="p-b-10">
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                Home
+              </a>
+            </li>
+
+            <li class="p-b-10">
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                Products
+              </a>
+            </li>
+
+            <li class="p-b-10">
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                About Us
+              </a>
+            </li>
+
+            <li class="p-b-10">
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                Blog
+              </a>
+            </li>         
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 p-b-50">
+          <h4 class="stext-301 cl0 p-b-30">
+            Categories
+          </h4>
+
+          <ul>
+            <li class="p-b-10">
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                <i class="fa d-inline mr-3 text-secondary fa-phone"></i>+91-9953068351
+              </a>
+            </li>
+
+            <li class="p-b-10">
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                 <i class="fa d-inline mr-3 text-secondary fa-envelope-o"></i>daneshkhandelwal@live.com
+              </a>
+            </li>
+
+            <li class="p-b-10">
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                  <i class="fa d-inline mr-3 fa-map-marker text-secondary"></i>New Delhi
+              </a>
+            </li>
+
+
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 p-b-50">
+          <h4 class="stext-301 cl0 p-b-30">
+            Thames
+          </h4>
+
+          <p class="stext-107 cl7 size-201">
+            We Manufacture High Quality C.p.(Chrome Plated) bathroom fitting which is made of brass only Bcoz Brass dont rust or react with water which gives Bathroom fittings true long life. 
+          </p>
+
+
+        </div>
+
+      
+      </div>
+
+      <div class="p-t-40">
+        <p class="stext-107 cl6 txt-center">
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Thames - All rights reserved.<!-- | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>About</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<!--===============================================================================================-->
+</head>
+<body class="animsition">
+	
+<!-- Header -->
+	<header class="header-v2">
+		<!-- Header desktop -->
+		<div class="container-menu-desktop trans-03">
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop p-l-45">
+
+					<!-- Logo desktop -->
+					<a href="/" class="logo">
+						<img width="150" src="/static/images/icons/logo-01.jpeg" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li>
+								<a href="/">Home</a>
+							</li>
+
+							<li>
+								<a href="{% url 'products' %}">Products</a>
+							</li>
+							<li>
+								<a href="{% url 'blog' %}">Blog</a>
+							</li>
+
+							<li>
+								<a href="{% url 'aboutus' %}">About Us</a>
+							</li>
+
+							<li  class="active-menu">
+								<a href="{% url 'contactus' %}">Contact Us</a>
+							</li>							
+						</ul>
+					</div>
+
+					<!-- Icon header -->
+					<div class="wrap-icon-header flex-w flex-r-m h-full">
+						<div class="flex-c-m h-full p-r-24">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
+								<i class="zmdi zmdi-search"></i>
+							</div>
+						</div>
+						<div class="menu-desktop">
+						<ul class="main-menu">
+							<li>
+								<a href="{% url 'login' %}">Login <img src="/static/images/thamesloginicon.png" width="15px" height="15px"></a>
+							</li>
+						</ul>
+						</div>
+						<div class="menu-desktop">
+						<ul class="main-menu">
+							<li style="margin-right: 50px;">
+								<a href="{% url 'signup' %}">Signup <img src="/static/images/thamessignupicon.png" width="18px" height="18px"></a>
+							</li>
+						</ul>
+						</div>
+
+
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="/"><img src="/static/images/icons/logo-01.jpeg" alt="IMG-LOGO"></a>
+			</div>
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+					<i class="zmdi zmdi-search"></i>
+				</div>
+			</div>
+
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+
+
+						<ul class="main-menu-m">
+							<li>
+								<a href="/">Home</a>
+							</li>
+
+							<li>
+								<a href="{% url 'products' %}">Products</a>
+							</li>
+							<li>
+								<a href="{% url 'blog' %}">Blog</a>
+							</li>
+
+							<li >
+								<a href="{% url 'aboutus' %}">About Us</a>
+							</li>
+
+							<li  class="active-menu">
+								<a href="{% url 'contactus' %}">Contact Us</a>
+							</li>	
+							<li>
+								<a href="{% url 'login' %}">Login <img src="/static/images/thamesloginicon.png" width="15px" height="15px"></a>
+							</li>
+							<li style="margin-right: 50px;">
+								<a href="{% url 'signup' %}">Signup <img src="/static/images/thamessignupicon.png" width="18px" height="18px"></a>
+							</li>						
+						</ul>
+		</div>
+
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="/static/images/icons/icon-close2.png" alt="CLOSE">
+				</button>
+
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<!-- Cart -->
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2">
+					Your Cart
+				</span>
+
+				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					<i class="zmdi zmdi-close"></i>
+				</div>
+			</div>
+			
+			<div class="header-cart-content flex-w js-pscroll">
+				<ul class="header-cart-wrapitem w-full">
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="/static/images/item-cart-01.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								White Shirt Pleat
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $19.00
+							</span>
+						</div>
+					</li>
+
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="/static/images/item-cart-02.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								Converse All Star
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $39.00
+							</span>
+						</div>
+					</li>
+
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="/static/images/item-cart-03.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								Nixon Porter Leather
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $17.00
+							</span>
+						</div>
+					</li>
+				</ul>
+				
+				<div class="w-full">
+					<div class="header-cart-total w-full p-tb-40">
+						Total: $75.00
+					</div>
+
+					<div class="header-cart-buttons flex-w w-full">
+						<a href="/static/shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+							View Cart
+						</a>
+
+						<a href="/static/shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+							Check Out
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Title page -->
+<div class="container">
+	<center><h2>Please provide us some information to get our best services.</h2></center>
+
+	
+</div>
+
+
+	<!-- Content page -->
+<div class="container">
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+</div>
+	
+		
+
+<!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Mapsite
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Home
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Products
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								About Us
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Blog
+							</a>
+						</li>					
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Categories
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								<i class="fa d-inline mr-3 text-secondary fa-phone"></i>+91-9953068351
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								 <i class="fa d-inline mr-3 text-secondary fa-envelope-o"></i>daneshkhandelwal@live.com
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								  <i class="fa d-inline mr-3 fa-map-marker text-secondary"></i>New Delhi
+							</a>
+						</li>
+
+
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Thames
+					</h4>
+
+					<p class="stext-107 cl7 size-201">
+						We Manufacture High Quality C.p.(Chrome Plated) bathroom fitting which is made of brass only Bcoz Brass dont rust or react with water which gives Bathroom fittings true long life. 
+					</p>
+
+
+				</div>
+
+			
+			</div>
+
+			<div class="p-t-40">
+				<p class="stext-107 cl6 txt-center">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Thames - All rights reserved.<!-- | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+				</p>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+<!--===============================================================================================-->	
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="/static/js/main.js"></script>
+	
+</body>
+</html>

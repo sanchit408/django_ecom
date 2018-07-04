@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>Click <a href="/logout/">Here</a> to Logout </p>
+    {% if request.user.profile.pic %}
+    <img src="{{request.user.profile.pic.url}}" alt="" height="300" width="300">
+    {% endif %}
+    <h2>hii.... {{request.user.username}}! You are Logged in</h2>
+    <form action="" method="post">{% csrf_token %}
+      Title:
+      <input type="text" name="title" value=""><br>
+      Content:
+      <textarea name="content" rows="8" cols="80"></textarea><br>
+      <input type="submit" name="" value="okay">
+    </form>
+
+    {% if all_share %}
+    {% for i in all_share %}
+        {% if i.user == request.user %}
+    <h2>post shared by {{i.user.username}}</h2><br>
+    Title: {{i.post.title}}<br>
+    content: {{i.post.content}}<br>
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% for i in data %}
+      <h3>posted by: {{i.created_by.username}}</h3>
+      {% if i.created_by.profile.pic %}
+      <img src="{{i.created_by.profile.pic.url}}" width="50" height="50" alt="">
+      {% endif %}
+      Title: {{i.title}}<br />
+      {{i.date|timesince}} ago <br>
+      Content: {{i.content|truncatechars:30}}<br /><br>
+      {% if i.created_by == request.user %}
+      <button onclick="window.location='{% url 'delete' i.id %}'">Delete</button>
+      <button onclick="window.location='{% url 'share' i.id %}'">share</button>
+      {% endif %}
+      <hr>
+      {% endfor %}
+  </body>
+</html>

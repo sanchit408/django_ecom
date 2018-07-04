@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body class="animsition">
+	    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/blog_login/home/">Welcome {{request.user.username}}!</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacts/">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Portfolio
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="/portfolio-1-col/">1 Column Portfolio</a>
+                <a class="dropdown-item" href="/portfolio-2-col/">2 Column Portfolio</a>
+                <a class="dropdown-item" href="/portfolio-3-col/">3 Column Portfolio</a>
+                <a class="dropdown-item" href="/portfolio-4-col/">4 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+              </div>
+            </li>
+
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'login' %}" ><!--id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                Blog
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                <a class="dropdown-item active" href="/blog_post.html">Blog Post</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	
+	<!-- Header -->
+	<header class="header-v2">
+		<!-- Header desktop -->
+		<div class="container-menu-desktop trans-03">
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop p-l-45">
+
+					<!-- Logo desktop -->
+					<a href="/" class="logo">
+						<img width="150" src="/static/images/icons/logo-01.jpeg" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li>
+								<a href="/">Home</a>
+							</li>
+
+							<li>
+								<a href="{% url 'products' %}">Products</a>
+							</li>
+							<li>
+								<a href="{% url 'blog' %}">Blog</a>
+							</li>
+
+							<li>
+								<a href="{% url 'aboutus' %}">About Us</a>
+							</li>
+
+							<li  class="active-menu">
+								<a href="{% url 'contactus' %}">Contact Us</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Icon header -->
+					<div class="wrap-icon-header flex-w flex-r-m h-full">
+						<div class="flex-c-m h-full p-r-24">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
+								<i class="zmdi zmdi-search"></i>
+							</div>
+						</div>
+						<div class="menu-desktop">
+						<ul class="main-menu">
+							<li style="margin-right: 50px;">
+								<a href="{% url 'login' %}">Login</a>
+							</li>
+						</ul>
+						</div>
+
+					</div>
+				</nav>
+			</div>
+		</div>
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="index.html"><img src="/static/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+			</div>
+
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+					<i class="zmdi zmdi-search"></i>
+				</div>
+
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+					<i class="zmdi zmdi-shopping-cart"></i>
+				</div>
+
+				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+					<i class="zmdi zmdi-favorite-outline"></i>
+				</a>
+			</div>
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+			<ul class="topbar-mobile">
+				<li>
+					<div class="left-top-bar">
+						Free shipping for standard order over $100
+					</div>
+				</li>
+
+				<li>
+					<div class="right-top-bar flex-w h-full">
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							Help & FAQs
+						</a>
+
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							My Account
+						</a>
+
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							EN
+						</a>
+
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							USD
+						</a>
+					</div>
+				</li>
+			</ul>
+
+			<ul class="main-menu-m">
+				<li>
+					<a href="index.html">Home</a>
+					<ul class="sub-menu-m">
+						<li><a href="index.html">Homepage 1</a></li>
+						<li><a href="home-02.html">Homepage 2</a></li>
+						<li><a href="home-03.html">Homepage 3</a></li>
+					</ul>
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
+
+				<li>
+					<a href="product.html">Shop</a>
+				</li>
+
+				<li>
+					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+				</li>
+
+				<li>
+					<a href="blog.html">Blog</a>
+				</li>
+
+				<li>
+					<a href="about.html">About</a>
+				</li>
+
+				<li>
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="/static/images/icons/icon-close2.png" alt="CLOSE">
+				</button>
+
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<!-- Cart -->
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2">
+					Your Cart
+				</span>
+
+				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					<i class="zmdi zmdi-close"></i>
+				</div>
+			</div>
+			
+			<div class="header-cart-content flex-w js-pscroll">
+				<ul class="header-cart-wrapitem w-full">
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="/static/images/item-cart-01.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								White Shirt Pleat
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $19.00
+							</span>
+						</div>
+					</li>
+
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="/static/images/item-cart-02.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								Converse All Star
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $39.00
+							</span>
+						</div>
+					</li>
+
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="/static/images/item-cart-03.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								Nixon Porter Leather
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $17.00
+							</span>
+						</div>
+					</li>
+				</ul>
+				
+				<div class="w-full">
+					<div class="header-cart-total w-full p-tb-40">
+						Total: $75.00
+					</div>
+
+					<div class="header-cart-buttons flex-w w-full">
+						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+							View Cart
+						</a>
+
+						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+							Check Out
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Title page -->
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/static/images/bg-01.jpg');">
+		<h2 class="ltext-105 cl0 txt-center">
+			Contact
+		</h2>
+	</section>	
+
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/blog_login/home/">Welcome {{request.user.username}}!</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacts/">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Portfolio
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="/portfolio-1-col/">1 Column Portfolio</a>
+                <a class="dropdown-item" href="/portfolio-2-col/">2 Column Portfolio</a>
+                <a class="dropdown-item" href="/portfolio-3-col/">3 Column Portfolio</a>
+                <a class="dropdown-item" href="/portfolio-4-col/">4 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+              </div>
+            </li>
+
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'login' %}" ><!--id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                Blog
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                <a class="dropdown-item active" href="/blog_post.html">Blog Post</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Post Title
+        <small>by
+          <a href="#">Start Bootstrap</a>
+        </small>
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Blog Home 2</li>
+      </ol>
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+          <!-- Preview Image -->
+          <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+
+          <hr>
+
+          <!-- Date/Time -->
+          <p>Posted on January 1, 2017 at 12:00 PM</p>
+
+          <hr>
+
+          <!-- Post Content -->
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
+
+          <blockquote class="blockquote">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">Someone famous in
+              <cite title="Source Title">Source Title</cite>
+            </footer>
+          </blockquote>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+
+          <hr>
+
+          <!-- Comments Form -->
+          <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
+              <form action='' method='post'>{% csrf_token %}
+                <div class="form-group">
+                  <textarea class="form-control" name='text' rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Single Comment -->
+          {% for i in data %}
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">{{i.created_by.username}}</h5>
+              {{i.text}}
+              <table>
+                {% if nested %}
+                {% for k in nested %}
+                {% if i.id == k.comment.id %}
+                <tr>
+                  <td>
+                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                  </td>
+                  <td>
+                    {{k.text}}
+                  </td>
+                </tr>
+                {% endif %}
+                {% endfor %}  
+                {% endif %}
+                <tr>
+                  <td>
+                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                  </td>
+                  <td>
+              <form action='{% url 'login_app:nested' %}' method='post'>{% csrf_token %}
+                <div class="form-group">
+                  <input type="hidden" name="comment" value="{{i.id}}">
+                  <input type="text" name='text' placeholder="Write a comment" style="{margin-left: 10px; margin-top:20px;  }" width="800px"></input>
+                </div>
+
+              </form>                  
+                  </td>
+                </tr> 
+
+              </table>
+
+            </div>
+          </div>
+          {% endfor %}
+          <!-- Comment with nested comments 
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Commenter Name</h5>
+              nested comment
+
+              <div class="media mt-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                  <h5 class="mt-0">Commenter Name</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+
+              <div class="media mt-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                  <h5 class="mt-0">Commenter Name</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+-->
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Search Widget -->
+          <div class="card mb-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Categories</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Web Design</a>
+                    </li>
+                    <li>
+                      <a href="#">HTML</a>
+                    </li>
+                    <li>
+                      <a href="#">Freebies</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">JavaScript</a>
+                    </li>
+                    <li>
+                      <a href="#">CSS</a>
+                    </li>
+                    <li>
+                      <a href="#">Tutorials</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Side Widget</h5>
+            <div class="card-body">
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+          </div>
+
+        </div>
+      -->
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+  <!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Mapsite
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Home
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Products
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								About Us
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Blog
+							</a>
+						</li>					
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Categories
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								<i class="fa d-inline mr-3 text-secondary fa-phone"></i>+91-9953068351
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								 <i class="fa d-inline mr-3 text-secondary fa-envelope-o"></i>daneshkhandelwal@live.com
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								  <i class="fa d-inline mr-3 fa-map-marker text-secondary"></i>New Delhi
+							</a>
+						</li>
+
+
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Thames
+					</h4>
+
+					<p class="stext-107 cl7 size-201">
+						We Manufacture High Quality C.p.(Chrome Plated) bathroom fitting which is made of brass only Bcoz Brass dont rust or react with water which gives Bathroom fittings true long life. 
+					</p>
+
+
+				</div>
+
+			
+			</div>
+
+			<div class="p-t-40">
+				<p class="stext-107 cl6 txt-center">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Thames - All rights reserved.<!-- | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+				</p>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+<!--===============================================================================================-->	
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+	<script src="/static/js/map-custom.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/js/main.js"></script>
+
+</body>
+</html>
